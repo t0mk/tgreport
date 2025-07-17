@@ -1,30 +1,26 @@
 # tgreport
 
-`tgreport` is a Go program for running command checks defined in a YAML file. It compares the output of each command to an expected value, and reports failures either to the console or via Telegram.
-
-## Features
-- Load checks from a YAML config file
-- Run shell commands and compare their output to expected results
-- Ignore ANSI color codes and whitespace differences in output
-- Report failures to stdout or send them to a Telegram chat
-- Includes tests for config loading, color code/whitespace handling, and Telegram integration
+A tool to run command checks from a YAML config and optionally report failures to Telegram.
 
 ## Usage
 
-### Basic
 ```
-go build -o tgreport tgreport.go
-./tgreport test.yaml
+tgreport [-t] -c <config.yaml>
 ```
 
-### With Telegram Reporting
-Set the following environment variables:
-- `TG_TOKEN`: Your Telegram bot token
-- `TG_CHAT`: Your Telegram chat ID
+- `-t`: Send failed check report to Telegram (requires `TG_TOKEN` and `TG_CHAT` environment variables)
+- `-c <config.yaml>`: Path to the YAML config file (required)
 
-Then run:
+## Example
+
 ```
-./tgreport -t test.yaml
+tgreport -c test.yaml
+```
+
+or with Telegram reporting:
+
+```
+tgreport -t -c test.yaml
 ```
 
 ## Download
@@ -36,7 +32,7 @@ Example (Linux):
 ```
 wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport-linux-amd64
 chmod +x tgreport-linux-amd64
-./tgreport-linux-amd64 test.yaml
+./tgreport-linux-amd64 -c test.yaml
 ```
 
 Example (macOS):
@@ -44,7 +40,7 @@ Example (macOS):
 ```
 curl -LO https://github.com/t0mk/tgreport/releases/latest/download/tgreport-darwin-amd64
 chmod +x tgreport-darwin-amd64
-./tgreport-darwin-amd64 test.yaml
+./tgreport-darwin-amd64 -c test.yaml
 ```
 
 ## YAML Config Example
@@ -84,7 +80,7 @@ crontab -e
 Add a line like the following (replace paths and values as needed):
 
 ```
-0 8 * * * TG_TOKEN=your_telegram_bot_token TG_CHAT=your_telegram_chat_id /full/path/to/tgreport -t /full/path/to/test.yaml >> /tmp/tgreport.log 2>&1
+0 8 * * * TG_TOKEN=your_telegram_bot_token TG_CHAT=your_telegram_chat_id /full/path/to/tgreport -t -c /full/path/to/test.yaml >> /tmp/tgreport.log 2>&1
 ```
 
 - `0 8 * * *` runs the job every day at 8:00 AM.

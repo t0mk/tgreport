@@ -77,16 +77,15 @@ func loadConfig(filename string) (Config, error) {
 }
 
 func main() {
-	useTelegram := flag.Bool("t", false, "Send failed check report to Telegram")
+	useTelegram := flag.Bool("-t", false, "Send failed check report to Telegram")
+	configPath := flag.String("-c", "", "Path to config YAML file")
 	flag.Parse()
 
-	args := flag.Args()
-	if len(args) < 1 {
-		fmt.Println("Usage: tgreport [-t] <config.yaml>")
+	if *configPath == "" {
+		fmt.Println("Usage: tgreport [-t] -c <config.yaml>")
 		os.Exit(1)
 	}
-	configFile := args[0]
-	cfg, err := loadConfig(configFile)
+	cfg, err := loadConfig(*configPath)
 	if err != nil {
 		fmt.Printf("Failed to load config: %v\n", err)
 		os.Exit(1)
