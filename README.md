@@ -70,5 +70,29 @@ Run all tests with:
 go test -v
 ```
 
+## Running from Cron
+
+You can automate tgreport using cron and provide the necessary environment variables for Telegram reporting.
+
+### Example Cron Configuration
+
+Edit your crontab with:
+```
+crontab -e
+```
+
+Add a line like the following (replace paths and values as needed):
+
+```
+0 8 * * * TG_TOKEN=your_telegram_bot_token TG_CHAT=your_telegram_chat_id /full/path/to/tgreport -t /full/path/to/test.yaml >> /tmp/tgreport.log 2>&1
+```
+
+- `0 8 * * *` runs the job every day at 8:00 AM.
+- Replace `/full/path/to/tgreport` and `/full/path/to/test.yaml` with the actual paths on your system.
+- Replace `your_telegram_bot_token` and `your_telegram_chat_id` with your actual Telegram bot token and chat ID.
+- Output is appended to `/tmp/tgreport.log` for debugging.
+
+**Note:** Cron runs with a minimal environment, so always use full paths and set required environment variables inline or at the top of your crontab.
+
 ## License
 MIT 
