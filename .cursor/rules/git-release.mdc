@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+
+# Git Release Workflow
+
+To release your changes, follow these steps:
+
+1. **Stage your changes:**
+   ```sh
+   git add .
+   ```
+2. **Commit with a good SemVer message:**
+   - infer a good commit message based on staged changes
+   - Use a message like `feat: add new feature`, `fix: correct bug`, or `chore: update dependencies`.
+   - For version bumps, use `chore(release): vX.Y.Z` (replace X.Y.Z with the new version).
+   ```sh
+   git commit -m "<your semver message>"
+   ```
+3. **Push to main branch:**
+   ```sh
+   git push origin main
+   ```
+4. **Create and push a tag according to SemVer rules:**
+   - infer new version based on changes from last one
+   - Replace `vX.Y.Z` with your new version.
+   ```sh
+   git tag vX.Y.Z
+   git push origin vX.Y.Z
+   ```
+5. **Create a release (GitHub/GitLab):**
+   - Go to your repository's Releases page and draft a new release for tag `vX.Y.Z`.
+   - Add release notes describing the changes.
+
+> This workflow ensures your code is versioned and released following best practices.

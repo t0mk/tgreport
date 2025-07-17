@@ -77,8 +77,8 @@ func loadConfig(filename string) (Config, error) {
 }
 
 func main() {
-	useTelegram := flag.Bool("-t", false, "Send failed check report to Telegram")
-	configPath := flag.String("-c", "", "Path to config YAML file")
+	useTelegram := flag.Bool("t", false, "Send failed check report to Telegram")
+	configPath := flag.String("c", "", "Path to config YAML file")
 	flag.Parse()
 
 	if *configPath == "" {

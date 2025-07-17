@@ -1,0 +1,14 @@
+# Project Structure Guide
+
+This project is a Go application with the following main files:
+
+- [tgreport.go](mdc:tgreport.go): Main application logic, including core functions and entry point.
+- [tgreport_test.go](mdc:tgreport_test.go): Contains tests for the application's main features, including config loading, command execution, output processing, and Telegram message sending.
+- [test.yaml](mdc:test.yaml): Example or default configuration file used for tests and as a template for user configuration.
+- [go.mod](mdc:go.mod), [go.sum](mdc:go.sum): Go module definition and dependency lock files.
+
+Refer to the respective files for implementation details and test coverage.
+description:
+globs:
+alwaysApply: false
+---
