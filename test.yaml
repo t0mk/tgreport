@@ -1,0 +1,11 @@
+checks:
+  - command: "echo 'expected file contents, everything ok'"
+    expectedoutput: "expected file contents, everything ok\n"
+  - command: "cat /nonexistentfile"
+    expectedoutput: "this will not match"
+  - command: |
+      printf 'line1\nline2\nline3\n'
+    expectedoutput: |
+      line1
+      line2
+      line3 
