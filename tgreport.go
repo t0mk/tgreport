@@ -111,7 +111,7 @@ func main() {
 			if stderr != "" {
 				report = fmt.Sprintf("[FAIL] Command: %s\nStderr: %s\n", check.Command, stderr)
 			} else {
-				report = fmt.Sprintf("[FAIL] Command: %s\nGot: %s\nExpected: %s\n", check.Command, trimmedStdout, trimmedExpected)
+				report = fmt.Sprintf("[FAIL] Command: %s\nGot:\n%s\n---------\nExpected:\n%s\n", check.Command, trimmedStdout, trimmedExpected)
 			}
 			if *useTelegram {
 				err := sendTelegramMessage(tgToken, tgChat, report)
