@@ -29,14 +29,22 @@ Then run:
 
 ## Download
 
-You can download the latest release binary from the [GitHub Releases page](https://github.com/t0mk/tgreport/releases/tag/v0.1.0).
+You can download the latest release binary from the [GitHub Releases page](https://github.com/t0mk/tgreport/releases/latest).
 
-Example:
+Example (Linux):
 
 ```
-wget https://github.com/t0mk/tgreport/releases/download/v0.1.0/tgreport
-chmod +x tgreport
-./tgreport test.yaml
+wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport-linux-amd64
+chmod +x tgreport-linux-amd64
+./tgreport-linux-amd64 test.yaml
+```
+
+Example (macOS):
+
+```
+curl -LO https://github.com/t0mk/tgreport/releases/latest/download/tgreport-darwin-amd64
+chmod +x tgreport-darwin-amd64
+./tgreport-darwin-amd64 test.yaml
 ```
 
 ## YAML Config Example
