@@ -25,23 +25,25 @@ tgreport -t -c test.yaml
 
 ## Download
 
-You can download the latest release binary from the [GitHub Releases page](https://github.com/t0mk/tgreport/releases/latest).
+Go to the [GitHub Releases page](https://github.com/t0mk/tgreport/releases/latest) for all available binaries.
 
-Example (Linux):
+### Example download commands
 
-```
-wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport -O tgreport
+#### Linux x86_64
+```sh
+wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport-linux-amd64 -O tgreport
 chmod +x tgreport
 ./tgreport -c test.yaml
 ```
 
-Example (macOS):
-
-```
-curl -Lo tgreport https://github.com/t0mk/tgreport/releases/latest/download/tgreport
+#### macOS (Intel)
+```sh
+curl -Lo tgreport https://github.com/t0mk/tgreport/releases/latest/download/tgreport-darwin-amd64
 chmod +x tgreport
 ./tgreport -c test.yaml
 ```
+
+For other platforms, see the [Releases page](https://github.com/t0mk/tgreport/releases/latest).
 
 ## YAML Config Example
 ```yaml
