@@ -30,17 +30,17 @@ You can download the latest release binary from the [GitHub Releases page](https
 Example (Linux):
 
 ```
-wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport-linux-amd64
-chmod +x tgreport-linux-amd64
-./tgreport-linux-amd64 -c test.yaml
+wget https://github.com/t0mk/tgreport/releases/latest/download/tgreport -O tgreport
+chmod +x tgreport
+./tgreport -c test.yaml
 ```
 
 Example (macOS):
 
 ```
-curl -LO https://github.com/t0mk/tgreport/releases/latest/download/tgreport-darwin-amd64
-chmod +x tgreport-darwin-amd64
-./tgreport-darwin-amd64 -c test.yaml
+curl -Lo tgreport https://github.com/t0mk/tgreport/releases/latest/download/tgreport
+chmod +x tgreport
+./tgreport -c test.yaml
 ```
 
 ## YAML Config Example
