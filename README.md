@@ -27,6 +27,18 @@ Then run:
 ./tgreport -t test.yaml
 ```
 
+## Download
+
+You can download the latest release binary from the [GitHub Releases page](https://github.com/t0mk/tgreport/releases/tag/v0.1.0).
+
+Example:
+
+```
+wget https://github.com/t0mk/tgreport/releases/download/v0.1.0/tgreport
+chmod +x tgreport
+./tgreport test.yaml
+```
+
 ## YAML Config Example
 ```yaml
 checks:
